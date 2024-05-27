@@ -1,31 +1,15 @@
-import React, { useEffect } from 'react';
-import Swiper from 'swiper';
+import React from 'react';
 import 'swiper/swiper-bundle.css';
-import { LISTSUGGEST } from '../shared/data';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { LISTCOMMENT } from '../shared/data';
+import avatar from "../assets/images/huynh-that-small.png";
 
 const CommentComponent = () => {
-    useEffect(() => {
-        const swiper = new Swiper('.swiper-container', {
-            effect: 'slide',
-            slidesPerView: 3,
-            spaceBetween: 0,
-            loop: true,
-            autoplay: {
-                reverseDirection: true,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                1024: {
-                    slidesPerView: 3,
-                },
-            },
-        });
-    }, []);
 
     return (
         <section className="comment">
             <div className="container">
-                <h2 className="pt-5 title-commemt text-bold">Những bình luận nổi bật</h2>
+                <h2 className="pt-5 line-chuhui title-commemt text-bold">Những bình luận nổi bật</h2>
                 <div className="d-flex comment-title">
                     <p className="pb-5">Dưới đây là những bình luận của các thành viên trong hội hụi 1024 đã bình luận,
                         trình bày về trải nghiệm khi tham gia hội.
@@ -39,8 +23,27 @@ const CommentComponent = () => {
                 <div className="slider-container">
                     <div className="swiper-container card-slider">
                         <div className="swiper-wrapper" id="comment">
-                            {LISTSUGGEST.map((item, index) => (
-                                <div className="swiper-slide" key={index}>
+                            <Swiper
+                                spaceBetween={30}
+                                slidesPerView="3"
+                                loop={true}
+                                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                                breakpoints={{
+                                    429: {
+                                        slidesPerView: 1,
+                                    },
+                                    // For larger screens (tablets and desktops)
+                                    1023: {
+                                        slidesPerView: 2,
+                                    },
+                                    1440: {
+                                        slidesPerView: 3,
+                                    }
+                                }}
+                                navigation={true}
+                            >
+                            {LISTCOMMENT.map((item, index) => (
+                                <SwiperSlide className="swiper-slide" key={index}>
                                     <div className="container comment-card testimonial-card pb-5">
                                         <div className="member d-flex pt-4">
                                             <div className="justify-content-lg-start">
@@ -59,13 +62,80 @@ const CommentComponent = () => {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </SwiperSlide>
                             ))}
+                            </Swiper>
                         </div>
                         {/* end of swiper-wrapper */}
-                        {/* Add Arrows */}
-                        <div className="swiper-button-next"></div>
-                        <div className="swiper-button-prev"></div>
+
+                        <div className="swiper-slide hidden-suggest ">
+                            <div className="container text-center pb-4 ">
+                                <div className="member box-shadown d-flex pt-4 ">
+                                    <div className="justify-content-lg-start">
+                                        <div className="m-3">
+                                            <p>Viverra lacus suspendisse elit, adipiscing orci, non turpis etiam sapien.
+                                                Viverra blandit sem neque pretium. Duis enim semper fermentum consequat
+                                                aenean libero. Blandit porta leo condimentum dolor, nisi, aliquet ante
+                                                laoreet.</p>
+                                        </div>
+
+                                        <div className="d-flex">
+                                            <img style={{ width: '48px', height: '48px' }} className="m-2" src={avatar} />
+                                            <div>
+                                                <p className="m-2 text-bold">Huỳnh Thất</p>
+                                                <p className="m-2">Chủ hụi</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="swiper-slide hidden-suggest ">
+                            <div className="container text-center pb-4 ">
+                                <div className="member box-shadown d-flex pt-4 ">
+                                    <div className="justify-content-lg-start">
+                                        <div className="m-3">
+                                            <p>Viverra lacus suspendisse elit, adipiscing orci, non turpis etiam sapien.
+                                                Viverra blandit sem neque pretium. Duis enim semper fermentum consequat
+                                                aenean libero. Blandit porta leo condimentum dolor, nisi, aliquet ante
+                                                laoreet.</p>
+                                        </div>
+
+                                        <div className="d-flex">
+                                            <img style={{ width: '48px', height: '48px' }} className="m-2" src={avatar} />
+                                                <div>
+                                                    <p className="m-2 text-bold">Huỳnh Thất</p>
+                                                    <p className="m-2">Chủ hụi</p>
+                                                </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="swiper-slide hidden-suggest ">
+                            <div className="container text-center pb-4 ">
+                                <div className="member box-shadown d-flex pt-4 ">
+                                    <div className="justify-content-lg-start">
+                                        <div className="m-3">
+                                            <p>Viverra lacus suspendisse elit, adipiscing orci, non turpis etiam sapien.
+                                                Viverra blandit sem neque pretium. Duis enim semper fermentum consequat
+                                                aenean libero. Blandit porta leo condimentum dolor, nisi, aliquet ante
+                                                laoreet.</p>
+                                        </div>
+
+                                        <div className="d-flex">
+                                            <img style={{ width: '48px', height: '48px' }} className="m-2" src={avatar} />
+                                            <div>
+                                                <p className="m-2 text-bold">Huỳnh Thất</p>
+                                                <p className="m-2">Chủ hụi</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     {/* end of swiper-container */}
                 </div>

@@ -49,8 +49,8 @@ const WelcomeComponent = () => {
                         <p className="text-bold title-image">Các thành viên vừa tham gia:</p>
                         <Swiper
                             className="container swiper-join-member mh-50 oh"
-                            spaceBetween={30}
-                            slidesPerView="auto"
+                            spaceBetween={0}
+                            slidesPerView="3"
                             direction="vertical"
                             loop={true}
                             autoplay={{ delay: 3000, disableOnInteraction: false }}

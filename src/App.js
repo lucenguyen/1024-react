@@ -16,11 +16,11 @@ function App() {
       <HeaderComponent />
         <WelcomeComponent />
       <OwnerListComponent />
-        {/*<SuggesrComponent />*/}
-        {/*<CommentComponent />*/}
-        {/*<JoinWithUs />*/}
-        {/*<LibraryComponent />*/}
-        {/*<FooterComponent />*/}
+        <SuggesrComponent />
+        <CommentComponent />
+        <LibraryComponent />
+        <JoinWithUs />
+        <FooterComponent />
     </div>
   );
 }
