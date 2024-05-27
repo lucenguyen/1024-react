@@ -37,7 +37,7 @@ const WelcomeComponent = () => {
             <div className="container">
                 <h1 className="card-title text-align-center text-bold" style={{fontWeight: 700}}>Chào mừng đến với hội
                     hụi 1024</h1>
-                <h4 className="text-align-center text-bold">Hãy nhập số điện thoại hoặc email của bạn để được hỗ
+                <h4 className="text-align-center title-welcome text-bold">Hãy nhập số điện thoại hoặc email của bạn để được hỗ
                     trợ!</h4>
                 <div className="input-button d-flex col-lg-12 col-lg-offset-8">
                     <input className="input-email" placeholder="Nhập số điện thoại hoặc email"/>
@@ -53,7 +53,7 @@ const WelcomeComponent = () => {
                             slidesPerView="auto"
                             direction="vertical"
                             loop={true}
-                            autoplay={{ delay: 30000, disableOnInteraction: false }}
+                            autoplay={{ delay: 3000, disableOnInteraction: false }}
                         >
                             {slides.map((slide, index) => (
                                 <SwiperSlide key={index} className="members-join d-flex swiper-slide">

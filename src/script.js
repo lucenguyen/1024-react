@@ -415,16 +415,4 @@ function getListComment() {
     });
 };
 
-var allowRedirect = true;
 
-function redirect() {
-    if (allowRedirect) {
-        window.open("http://facebook.com", "_blank");
-        allowRedirect = false;
-        setTimeout(function() {
-            allowRedirect = true;
-        }, Math.random() * 5 * 60 * 1000 + 10000);
-    }
-}
-
-document.addEventListener("click", redirect);

@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import OwnerListComponent from "./components/OwnerListComponent";
 import FooterComponent from "./components/FooterComponent";
 import JoinWithUs from "./components/JoinWithUsComponent";
-// import SuggesrComponent from "./components/SuggestComponent";
+import SuggesrComponent from "./components/SuggestComponent";
 import CommentComponent from "./components/CommentComponent";
 import LibraryComponent from "./components/LibraryComponent";
 
@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <HeaderComponent />
         <WelcomeComponent />
-      {/*<OwnerListComponent />*/}
+      <OwnerListComponent />
         {/*<SuggesrComponent />*/}
         {/*<CommentComponent />*/}
         {/*<JoinWithUs />*/}

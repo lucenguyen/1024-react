@@ -1,82 +1,61 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import menuIcon from '../assets/images/menu-icon.png';
 
 const HeaderComponent = () => {
-    window.onscroll = function () {
-        scrollFunction();
-    };
-
-    function scrollFunction() {
-        let intViewportWidth = window.innerWidth;
-        if (
-            document.body.scrollTop > 30 ||
-            document.documentElement.scrollTop > 30
-        ) {
-            if (intViewportWidth >= 1024) {
-                let navbar = document.getElementById("navbar");
-                if (navbar) {
-                    navbar.classList.add("top-nav-collapse");
-                }
+    useEffect(() => {
+        const handleScroll = () => {
+            const navbar = document.getElementById("navbar");
+            if (window.scrollY > 30 && window.innerWidth >= 1024) {
+                navbar?.classList.add("top-nav-collapse");
+            } else {
+                navbar?.classList.remove("top-nav-collapse");
             }
-        } else {
-            let navbar = document.getElementById("navbar");
-            if (navbar) {
-                navbar.classList.remove("top-nav-collapse");
-            }
-        }
-    }
+        };
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const listItems = document.querySelectorAll(".navbar-nav");
+        window.addEventListener("scroll", handleScroll);
 
-        listItems.forEach(function (item) {
-            item.addEventListener("click", function (event) {
-                const focusedElement = document.querySelector(".focused");
-                if (focusedElement) {
-                    focusedElement.classList.remove("focused");
-                }
-                event.target.classList.add("focused");
-            });
-        });
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+        const handleNavLinkClick = (event) => {
+            document.querySelector(".focused")?.classList.remove("focused");
+            event.target.classList.add("focused");
+        };
 
-        const firstItem = document.querySelector(".nav-item");
-        if (firstItem) {
-            firstItem.classList.add("focused");
-            firstItem.focus();
-        }
-    });
+        navLinks.forEach(link => link.addEventListener("click", handleNavLinkClick));
 
-// NAVBAR ON MOBILE
-    let elements = document.querySelectorAll(".nav-link:not(.dropdown-toggle)");
+        const firstNavLink = document.querySelector(".navbar-nav .nav-link");
+        firstNavLink?.classList.add("focused");
 
-    for (let i = 0; i < elements.length; i++) {
-        elements[i].addEventListener("click", () => {
-            let offcanvasCollapse = document.querySelector(".offcanvas-collapse");
-            if (offcanvasCollapse) {
-                offcanvasCollapse.classList.toggle("open");
-            }
-        });
-    }
+        const nonDropdownLinks = document.querySelectorAll(".nav-link:not(.dropdown-toggle)");
+        const handleNonDropdownLinkClick = () => {
+            const offcanvasCollapse = document.querySelector(".offcanvas-collapse");
+            offcanvasCollapse?.classList.toggle("open");
+        };
 
-    let navbarSideCollapse = document.querySelector("#navbarSideCollapse");
-    if (navbarSideCollapse) {
-        navbarSideCollapse.addEventListener("click", () => {
-            let navbarsExampleDefaultForMobile = document.querySelector("#navbarsExampleDefaultForMobile");
-            if (navbarsExampleDefaultForMobile) {
-                navbarsExampleDefaultForMobile.classList.toggle("open");
-            }
-        });
-    }
-    const menuIcon = require('../assets/images/menu-icon.png')
+        nonDropdownLinks.forEach(link => link.addEventListener("click", handleNonDropdownLinkClick));
+
+        const navbarSideCollapseButton = document.querySelector("#navbarSideCollapse");
+        const handleNavbarSideCollapseClick = () => {
+            const navbarsExampleDefaultForMobile = document.querySelector("#navbarsExampleDefaultForMobile");
+            navbarsExampleDefaultForMobile?.classList.toggle("open");
+        };
+
+        navbarSideCollapseButton?.addEventListener("click", handleNavbarSideCollapseClick);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            navLinks.forEach(link => link.removeEventListener("click", handleNavLinkClick));
+            nonDropdownLinks.forEach(link => link.removeEventListener("click", handleNonDropdownLinkClick));
+            navbarSideCollapseButton?.removeEventListener("click", handleNavbarSideCollapseClick);
+        };
+    }, []);
+
     return (
-        // Navigation
         <nav id="navbar" className="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
             <div className="container">
                 <a className="navbar-brand logo-text" href="index.html">1024</a>
-
                 <button className="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                     <img className="navbar-icon" src={menuIcon} alt="Menu Icon" />
                 </button>
-
                 <div className="navbar-collapse offcanvas-collapse" id="navbarsExampleDefaultForMobile">
                     <ul className="navbar-nav ms-auto navbar-nav-scroll">
                         <li className="nav-item">
@@ -131,6 +110,6 @@ const HeaderComponent = () => {
             </div> {/* end of container */}
         </nav> /* end of navbar */
     );
-}
+};
 
 export default HeaderComponent;

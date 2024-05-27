@@ -1,102 +1,36 @@
 import React from 'react';
+import { LISTOFOWNERS } from "../shared/data";
 
 const OwnerListComponent = () => {
-    document.addEventListener('DOMContentLoaded', function () {
-        getListOwners(listOfOwners1); // Assuming listOfOwners1 is defined elsewhere
-    });
-
-    let listOfOwners1 = [
-        {
-            name1: "Lê Nguyễn Bảo Trâm",
-            role1: "Chủ Hụi",
-            image1: "assets/images/bao-tram.png",
-            avatar: "assets/images/bao-tram-small.png"
-        },
-        {
-            name1: "Lê Huỳnh Chí Nhân",
-            role1: "Chủ Hụi",
-            image1: "assets/images/chi-nhan.png",
-            avatar: "assets/images/chi-nhan-small.png"
-        },
-        {
-            name1: "Nguyễn Huỳnh Thất",
-            role1: "Chủ Hụi",
-            image1: "assets/images/huynh-that.png",
-            avatar: "assets/images/huynh-that-small.png"
-        },
-        {
-            name1: "Nguyễn Hoàng Lâm",
-            role1: "Chủ Hụi",
-            image1: "assets/images/hoang-lam.png",
-            avatar: "assets/images/hoang-lam-small.png"
-        },
-        {
-            name1: "Lê Nguyễn Bảo Trâm",
-            role1: "Chủ Hụi",
-            image1: "assets/images/bao-tram.png",
-            avatar: "assets/images/bao-tram-small.png"
-        },
-        {
-            name1: "Lê Huỳnh Chí Nhân",
-            role1: "Chủ Hụi",
-            image1: "assets/images/chi-nhan.png",
-            avatar: "assets/images/chi-nhan-small.png"
-        },
-        {
-            name1: "Nguyễn Huỳnh Thất",
-            role1: "Chủ Hụi",
-            image1: "assets/images/huynh-that.png",
-            avatar: "../assets/images/huynh-that-small.png"
-        },
-        {name1: "Nguyễn Hoàng Lâm", role1: "Chủ Hụi", image1: "assets/images/hoang-lam.png", avatar: "assets/images/hoang-lam-small.png"},
-    ];
-
-    function getListOwners() {
-        var list = document.getElementById('owners')
-
-        if (list) {
-            // Loop through the listOfOwners and append HTML to the list element
-            for (let item of listOfOwners1) {
-                var div = `<div class=" ownerr"><div class="member-chuhui">
-                            <img  class="img-chu-hui" src="${item.image1}">
-                            <div class="d-flex">
-                            <div style="border-radius: 25%">
-                                <img class="m-2" src="${item.avatar}">
-                            </div>
-
-                                <div class="name-chu-hui">
-                                 <p style="font-size: 1.5vh" id="name" class="m-2 text-bold">${item.name1}</p>
-                                <div>
-                                
-                                </div>
-                                <p style="font-size: 1.5vh; padding-left: 20px" id="role" class="m-2 roles">${item.role1}</p>
-                                <div>
-          
-                                 </div>
-                            </div>
-                        </div></div>`;
-                // Append the HTML to the list element
-                list.innerHTML += div;
-            }
-        }
-    }
-
-    getListOwners(listOfOwners1);
-
     return (
         <section>
             <div className="container chuhui">
-                <h2 className="line text-bold pt-5">Các chủ hụi trong hội</h2>
-                <p className="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <h2 className="line line-chuhui text-bold pt-5">Các chủ hụi trong hội</h2>
+                <p className="line">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nam sit amet cursus magna. Quisque ornare at arcu ac gravida.
                     Suspendisse venenatis, justo eget mollis sodales, tortor libero varius enim,
                     quis pretium sem orci ac augue.
                 </p>
                 <div className="align-content-center list-owners" id="container">
-                    <div id="owners" className="d-flex">
-
+                    <div id="owners" className="d-flex flex-wrap">
+                        {LISTOFOWNERS.map((item, index) => (
+                            <div key={index} className="ownerr">
+                                <div className="member-chuhui">
+                                    <img className="img-chu-hui" src={item.image1} alt={item.name1} />
+                                    <div className="d-flex">
+                                        <div style={{ borderRadius: '25%' }}>
+                                            <img className="m-2" src={item.avatar} alt={item.name1} />
+                                        </div>
+                                        <div className="name-chu-hui">
+                                            <p style={{ fontSize: '1.5vh' }} id="name" className="m-2 text-bold">{item.name1}</p>
+                                            <p style={{ fontSize: '1.5vh', paddingLeft: '20px' }} id="role" className="m-2 roles">{item.role1}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-
                 </div>
             </div>
             <div className="text-center">
@@ -117,3 +51,5 @@ const OwnerListComponent = () => {
 }
 
 export default OwnerListComponent;
+
+

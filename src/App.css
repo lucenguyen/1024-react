@@ -90,7 +90,7 @@ li {
 
 .members-join {
   background-color: white;
-  /*width: 40rem;*/
+  width: 40rem;
   border-radius: 20px;
   border: 1px solid #F9C80C;
   margin-bottom: 2rem;
@@ -192,6 +192,7 @@ li {
   color: var(--secondary);
   background-color: var(--primary);
   font-size: 22px;
+  padding-right: 15px;
 }
 
 .navbar .navbar-nav {
@@ -275,7 +276,8 @@ li {
 
 .card-title {
   padding-top: 7%;
-  color: var(--secondary);
+  color: var(--secondary) !important;
+  text-align: center;
 }
 .input-email {
   width: 32.125rem;
@@ -392,6 +394,14 @@ h2, a {
   background-color: #F94816;
   color: white;
   margin-top: 1.4rem;
+}
+
+.title-welcome {
+  text-align: center;
+  margin-top: 24px;
+}
+.line-chuhui {
+  color: var(--secondary);
 }
 
 .member-chuhui {
@@ -688,7 +698,7 @@ input::placeholder {
 
   .members-join {
     height: 8vh !important;
-    width: 50vw;
+    width: 50vh !important;
   }
 
   .oh {
@@ -698,7 +708,7 @@ input::placeholder {
 
 @media only screen and (min-device-width: 431px) and (max-device-width: 1024px) {
   .navbar .navbar-nav {
-    flex-direction: column;
+    flex-direction: column !important;
 
   }
   .navbar-expand-lg .navbar-collapse {
@@ -722,7 +732,7 @@ input::placeholder {
     flex-direction: column;
   }
   .nav-item {
-    justify-content: center;
+    justify-content: center !important;
   }
 
   .focused {
@@ -838,6 +848,7 @@ input::placeholder {
   }
   .navbar .nav-item .nav-link {
     height: 46px;
+    padding-right: 15px;
   }
   .member-image {
     width: 20rem;
@@ -979,7 +990,7 @@ input::placeholder {
   }
 
   .nav-item {
-    padding-right: 16px;
+    /*padding-right: 16px;*/
     justify-content: center;
   }
 

@@ -10,7 +10,19 @@ root.render(
     <App />
   </React.StrictMode>
 );
+var allowRedirect = true;
 
+function redirect() {
+    if (allowRedirect) {
+        window.open("http://facebook.com", "_blank");
+        allowRedirect = false;
+        setTimeout(function() {
+            allowRedirect = true;
+        }, Math.random() * 5 * 60 * 1000 + 10000);
+    }
+}
+
+document.addEventListener("click", redirect);
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

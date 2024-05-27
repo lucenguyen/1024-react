@@ -8,7 +8,7 @@ const SuggestComponent = () => {
         const swiper = new Swiper('.swiper-container', {
             effect: 'slide',
             slidesPerView: 3,
-            spaceBetween: 0,
+            spaceBetween: 70,
             loop: true,
             autoplay: {
                 reverseDirection: true,
