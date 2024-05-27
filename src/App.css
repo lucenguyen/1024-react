@@ -90,7 +90,7 @@ li {
 
 .members-join {
   background-color: white;
-  width: 40rem;
+  /*width: 40rem;*/
   border-radius: 20px;
   border: 1px solid #F9C80C;
   margin-bottom: 2rem;
@@ -688,7 +688,7 @@ input::placeholder {
 
   .members-join {
     height: 8vh !important;
-    width: 50vh;
+    width: 50vw;
   }
 
   .oh {

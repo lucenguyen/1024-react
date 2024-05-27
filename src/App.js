@@ -15,12 +15,12 @@ function App() {
     <div className="App">
       <HeaderComponent />
         <WelcomeComponent />
-      <OwnerListComponent />
+      {/*<OwnerListComponent />*/}
         {/*<SuggesrComponent />*/}
         {/*<CommentComponent />*/}
-        <JoinWithUs />
-        <LibraryComponent />
-        <FooterComponent />
+        {/*<JoinWithUs />*/}
+        {/*<LibraryComponent />*/}
+        {/*<FooterComponent />*/}
     </div>
   );
 }
