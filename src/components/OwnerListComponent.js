@@ -1,5 +1,5 @@
 import React from 'react';
-import { LISTOFOWNERS } from "../shared/data";
+import { LISTOFOWNERS } from "../shared/list-owners";
 
 const OwnerListComponent = () => {
     return (

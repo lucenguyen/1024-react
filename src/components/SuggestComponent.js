@@ -2,7 +2,7 @@ import React from 'react';
 import 'swiper/css/autoplay';
 import 'swiper/swiper-bundle.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { LISTSUGGEST } from '../shared/data';
+import { LISTSUGGEST } from '../shared/list-suggest';
 import avatar from '../assets/images/huynh-that-small.png';
 
 const SuggestComponent = () => {
@@ -30,7 +30,7 @@ const SuggestComponent = () => {
                                     1023: {
                                         slidesPerView: 2,
                                     },
-                                    1440: {
+                                    1200: {
                                         slidesPerView: 3,
                                     }
                                 }}

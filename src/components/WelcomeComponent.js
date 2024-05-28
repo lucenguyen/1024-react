@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {LISTJOINMEMBERS} from "../shared/data";
+import {LISTJOINMEMBERS} from "../shared/list-member-join";
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';

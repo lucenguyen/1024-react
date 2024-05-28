@@ -1,7 +1,7 @@
 import React from 'react';
 import 'swiper/swiper-bundle.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { LISTCOMMENT } from '../shared/data';
+import { LISTCOMMENT } from '../shared/list-comment';
 import avatar from "../assets/images/huynh-that-small.png";
 
 const CommentComponent = () => {
@@ -36,7 +36,7 @@ const CommentComponent = () => {
                                     1023: {
                                         slidesPerView: 2,
                                     },
-                                    1440: {
+                                    1200: {
                                         slidesPerView: 3,
                                     }
                                 }}

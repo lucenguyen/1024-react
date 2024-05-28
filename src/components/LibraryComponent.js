@@ -29,7 +29,7 @@ const LibraryComponent = () => {
                                     1023: {
                                         slidesPerView: 2,
                                     },
-                                    1440: {
+                                    1200: {
                                         slidesPerView: 3,
                                     }
                                 }}
