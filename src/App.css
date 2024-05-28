@@ -731,6 +731,7 @@ input::placeholder {
   .oh {
     max-height: 33vh !important;
   }
+
 }
 
 @media only screen and (min-device-width: 431px) and (max-device-width: 1024px) {
@@ -764,6 +765,8 @@ input::placeholder {
 
   .focused {
     box-shadow: 0 4px 4px 0 gray;
+    background-color: #fff !important;
+    opacity: 0.5 !important;
   }
   .nav-item:hover,
   .nav-item.focused {
@@ -1023,6 +1026,9 @@ input::placeholder {
 
   .focused {
     box-shadow: 2px 2px 2px 2px gray;
+    background-color: #fff !important;
+    opacity: 0.5 !important;
+
   }
 
   .hidden-tablet {
@@ -1033,5 +1039,10 @@ input::placeholder {
   }
   .swiper-button-prev {
     display: none !important;
+  }
+  .center-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

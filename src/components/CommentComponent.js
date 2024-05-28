@@ -20,7 +20,7 @@ const CommentComponent = () => {
                 </div>
 
                 {/* Swiper */}
-                <div className="slider-container">
+                <div className="slider-container center-mobile">
                     <div className="swiper-container card-slider">
                         <div className="swiper-wrapper" id="comment">
                             <Swiper

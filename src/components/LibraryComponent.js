@@ -10,10 +10,10 @@ const LibraryComponent = () => {
 
     return (
         <section className="suggest">
-            <div className="container">
+            <div className="container ">
                 <h2 className="pt-5 text-bold line-chuhui">Thư viện đăng tải</h2>
                 <p className="pb-5">Các tư liệu được thành viên đăng tải trong quá trình hoạt động trong hội</p>
-                <div className="slider-container">
+                <div className="slider-container center-mobile">
                     <div className="swiper-container card-slider">
                         <div className="swiper-wrapper">
                             <Swiper
@@ -51,7 +51,7 @@ const LibraryComponent = () => {
                                         </div>
                                         <div>
                                             <p className="m-2 text-bold">Jane Doe</p>
-                                            <p className="m-2">Senior Designer</p>
+                                            <p className=" ml-5">Senior Designer</p>
                                         </div>
                                     </div>
                                 </div>

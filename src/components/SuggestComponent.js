@@ -14,7 +14,7 @@ const SuggestComponent = () => {
                 <p className="pb-5">Đây là những hụi hoạt động hiệu quả, đáng tin cậy với mức độ đánh giá uy tín cao</p>
 
                 {/* Swiper */}
-                <div className="slider-container">
+                <div className="slider-container center-mobile">
                     <div className="swiper-container card-slider">
                         <div className="swiper-wrapper" id="suggest">
                             <Swiper
