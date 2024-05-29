@@ -16,8 +16,9 @@ const LibraryComponent = () => {
                     <div className="swiper-container card-slider">
                         <div className="swiper-wrapper">
                             <Swiper
-                                spaceBetween={30}
+                                spaceBetween={20}
                                 slidesPerView="3"
+                                autoplay={{ delay: 3000, disableOnInteraction: false }}
                                 loop={true}
                                 breakpoints={{
                                     429: {
@@ -65,8 +66,9 @@ const LibraryComponent = () => {
                     <div className="swiper-container card-slider">
                         <div className="swiper-wrapper">
                             <Swiper
-                                spaceBetween={30}
+                                spaceBetween={20}
                                 slidesPerView="3"
+                                autoplay={{ delay: 3000, disableOnInteraction: false }}
                                 loop={true}
                                 breakpoints={{
                                     429: {
