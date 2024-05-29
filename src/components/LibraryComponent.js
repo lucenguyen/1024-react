@@ -1,10 +1,9 @@
 import React from 'react';
-import 'swiper/css/autoplay';
 import 'swiper/swiper-bundle.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import avatar from '../assets/images/bao-tram-small.png';
-import buttonPrev from '../assets/images/button-pre.png'
-import buttonNext from '../assets/images/button-next.png'
+import {ListLibrary} from "../shared/list-library";
+
 
 const LibraryComponent = () => {
 
@@ -20,7 +19,6 @@ const LibraryComponent = () => {
                                 spaceBetween={30}
                                 slidesPerView="3"
                                 loop={true}
-                                autoplay={{ delay: 3000, disableOnInteraction: false }}
                                 breakpoints={{
                                     429: {
                                         slidesPerView: 1,
@@ -33,10 +31,11 @@ const LibraryComponent = () => {
                                         slidesPerView: 3,
                                     }
                                 }}
-                                navigation={true}
+
                             >
-                            <SwiperSlide className="swiper-slide d-flex pt-4 m-2">
-                                <div className="video-library justify-content-lg-start">
+                                {ListLibrary.map((item, index) => (
+                            <SwiperSlide className="swiper-slide d-flex pt-4 m-2" key={index}>
+                                <div className="video-library-1 justify-content-lg-start">
                                     <div className="video text-center m-2">
                                         <iframe className="player" width="380" height="225"
                                                 src="https://www.youtube.com/embed/SlPhMPnQ58k?list=RDSlPhMPnQ58k"
@@ -47,61 +46,28 @@ const LibraryComponent = () => {
                                     </div>
                                     <div className="d-flex">
                                         <div style={{ borderRadius: '25%' }}>
-                                            <img className="m-2" src={avatar} alt="Jane Doe" />
+                                            <img className="m-2" src={item.avatar} alt="Jane Doe" />
                                         </div>
                                         <div>
-                                            <p className="m-2 text-bold">Jane Doe</p>
-                                            <p className=" ml-5">Senior Designer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="video-library justify-content-lg-start">
-                                    <div className="video text-center m-2">
-                                        <iframe className="player" width="380" height="225"
-                                                src="https://www.youtube.com/embed/SlPhMPnQ58k?list=RDSlPhMPnQ58k"
-                                                title="Maroon 5 - Memories (Official Video)" frameBorder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>
-                                        </iframe>
-                                    </div>
-                                    <div className="d-flex">
-                                        <div style={{ borderRadius: '25%' }}>
-                                            <img className="m-2" src={avatar} alt="Jane Doe" />
-                                        </div>
-                                        <div>
-                                            <p className="m-2 text-bold">Jane Doe</p>
-                                            <p className="m-2">Senior Designer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="video-library justify-content-lg-start">
-                                    <div className="video text-center m-2">
-                                        <iframe className="player" width="380" height="225"
-                                                src="https://www.youtube.com/embed/SlPhMPnQ58k?list=RDSlPhMPnQ58k"
-                                                title="Maroon 5 - Memories (Official Video)" frameBorder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>
-                                        </iframe>
-                                    </div>
-                                    <div className="d-flex">
-                                        <div style={{ borderRadius: '25%' }}>
-                                            <img className="m-2" src={avatar} alt="Jane Doe" />
-                                        </div>
-                                        <div>
-                                            <p className="m-2 text-bold">Jane Doe</p>
-                                            <p className="m-2">Senior Designer</p>
+                                            <p className="m-2 text-bold">{item.role}</p>
+                                            <p className=" ml-5">{item.name}</p>
                                         </div>
                                     </div>
                                 </div>
                             </SwiperSlide>
+                                ))}
                             </Swiper>
                         </div>
+
+                    </div>
+                </div>
+                <div className="slider-container center-mobile">
+                    <div className="swiper-container card-slider">
                         <div className="swiper-wrapper">
                             <Swiper
                                 spaceBetween={30}
                                 slidesPerView="3"
                                 loop={true}
-                                autoplay={{ delay: 3000, disableOnInteraction: false }}
                                 breakpoints={{
                                     429: {
                                         slidesPerView: 1,
@@ -116,67 +82,32 @@ const LibraryComponent = () => {
                                 }}
                                 navigation={true}
                             >
-                                <SwiperSlide className="swiper-slide d-flex pt-4 m-2">
-                                    <div className="video-library justify-content-lg-start">
-                                        <div className="video text-center m-2">
-                                            <iframe className="player" width="380" height="225"
-                                                    src="https://www.youtube.com/embed/SlPhMPnQ58k?list=RDSlPhMPnQ58k"
-                                                    title="Maroon 5 - Memories (Official Video)" frameBorder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                    referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>
-                                            </iframe>
-                                        </div>
-                                        <div className="d-flex">
-                                            <div style={{ borderRadius: '25%' }}>
-                                                <img className="m-2" src={avatar} alt="Jane Doe" />
+                                {ListLibrary.map((item, index) => (
+                                    <SwiperSlide className="swiper-slide d-flex pt-4 m-2" key={index}>
+                                        <div className="video-library justify-content-lg-start">
+                                            <div className="video text-center m-2">
+                                                <iframe className="player" width="380" height="225"
+                                                        src="https://www.youtube.com/embed/SlPhMPnQ58k?list=RDSlPhMPnQ58k"
+                                                        title="Maroon 5 - Memories (Official Video)" frameBorder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>
+                                                </iframe>
                                             </div>
-                                            <div>
-                                                <p className="m-2 text-bold">Jane Doe</p>
-                                                <p className="m-2">Senior Designer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="video-library justify-content-lg-start">
-                                        <div className="video text-center m-2">
-                                            <iframe className="player" width="380" height="225"
-                                                    src="https://www.youtube.com/embed/SlPhMPnQ58k?list=RDSlPhMPnQ58k"
-                                                    title="Maroon 5 - Memories (Official Video)" frameBorder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                    referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>
-                                            </iframe>
-                                        </div>
-                                        <div className="d-flex">
-                                            <div style={{ borderRadius: '25%' }}>
-                                                <img className="m-2" src={avatar} alt="Jane Doe" />
-                                            </div>
-                                            <div>
-                                                <p className="m-2 text-bold">Jane Doe</p>
-                                                <p className="m-2">Senior Designer</p>
+                                            <div className="d-flex">
+                                                <div style={{ borderRadius: '25%' }}>
+                                                    <img className="m-2" src={item.avatar} alt="Jane Doe" />
+                                                </div>
+                                                <div>
+                                                    <p className="m-2 text-bold">{item.role}</p>
+                                                    <p className=" ml-5">{item.name}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="video-library justify-content-lg-start">
-                                        <div className="video text-center m-2">
-                                            <iframe className="player" width="380" height="225"
-                                                    src="https://www.youtube.com/embed/SlPhMPnQ58k?list=RDSlPhMPnQ58k"
-                                                    title="Maroon 5 - Memories (Official Video)" frameBorder="0"
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                    referrerPolicy="strict-origin-when-cross-origin" allowFullScreen>
-                                            </iframe>
-                                        </div>
-                                        <div className="d-flex">
-                                            <div style={{ borderRadius: '25%' }}>
-                                                <img className="m-2" src={avatar} alt="Jane Doe" />
-                                            </div>
-                                            <div>
-                                                <p className="m-2 text-bold">Jane Doe</p>
-                                                <p className="m-2">Senior Designer</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
+                                    </SwiperSlide>
+                                ))}
                             </Swiper>
                         </div>
+
                         <div className="swiper-wrapper hidden-tablet">
 
                             <div className="swiper-video d-flex pt-4 m-2">
@@ -191,8 +122,8 @@ const LibraryComponent = () => {
                                             title="Maroon 5 - Memories (Official Video)" width="380"></iframe>
                                     </div>
                                     <div className="d-flex">
-                                        <div style={{ borderRadius: '25%' }}> {/* Sử dụng cú pháp đối tượng JavaScript */}
-                                            <img className="m-2" src={avatar} alt="Avatar" /> {/* Đảm bảo sử dụng thuộc tính alt */}
+                                        <div style={{ borderRadius: '25%' }}>
+                                            <img className="m-2" src={avatar} alt="Avatar" />
                                         </div>
                                         <div>
                                             <p className="m-2 text-bold">Jane Doe</p>
@@ -200,16 +131,6 @@ const LibraryComponent = () => {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-
-                        </div>
-
-                        <div style={{paddingBottom: '30px'}} className="hidden ">
-                            <div>
-                                <img style={{width: '30px', height: '30px', marginLeft: '30px', cursor: "pointer"}} src={buttonPrev}/>
-                            </div>
-                            <div >
-                                <img style={{width: '30px', height: '30px', marginLeft: '12px', cursor: "pointer"}} src={buttonNext}/>
                             </div>
 
                         </div>

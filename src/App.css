@@ -166,21 +166,21 @@ li {
 
 .offcanvas-collapse {
   position: fixed;
-  top: 2.75rem; /* adjusts the height between the top of the page and the offcanvas menu */
+  top: 2.2rem;
   bottom: 0;
-  left: 100%;
+  left: 0;
   width: 100%;
   overflow-y: auto;
   visibility: hidden;
   padding-right: 1rem;
   padding-left: 1rem;
   background-color: var(--primary);
-  transition: transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .offcanvas-collapse.open {
   visibility: visible;
-  transform: translateX(-100%);
+  transform: translateY(0);
   height: 50vh;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -339,10 +339,16 @@ li {
 
 
 .video-library {
-  width: 26rem;
+  width: 28rem;
   background-color: #e9eaea;
   border-radius: 16px;
-  /*margin-bottom: 120px;*/
+  margin-right: 42px;
+  margin-bottom: 160px;
+}
+.video-library-1 {
+  width: 28rem;
+  background-color: #e9eaea;
+  border-radius: 16px;
   margin-right: 42px;
 }
 
@@ -972,10 +978,11 @@ input::placeholder {
     display: none !important;
   }
   .player {
-    width: 310px;
+    width: 280px !important;
   }
   .video-library {
     width: 350px;
+    margin-bottom: unset;
   }
   .suggest-hidden {
     display: block;
