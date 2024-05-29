@@ -32,7 +32,6 @@ const CommentComponent = () => {
                                     429: {
                                         slidesPerView: 1,
                                     },
-                                    // For larger screens (tablets and desktops)
                                     1023: {
                                         slidesPerView: 2,
                                     },

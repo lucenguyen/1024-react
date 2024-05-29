@@ -875,6 +875,9 @@ input::placeholder {
     width: 22px;
     background-size: 22px 34px;
   }
+  #owners .ownerr:nth-child(n+5) {
+    display: none; /* Ẩn các item từ item thứ 5 trở đi */
+  }
 
 }
 
@@ -1051,5 +1054,8 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  #owners .ownerr:nth-child(n+5) {
+    display: none;
   }
 }

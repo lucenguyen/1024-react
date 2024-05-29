@@ -23,8 +23,8 @@ const OwnerListComponent = () => {
                                             <img className="m-2" src={item.avatar} alt={item.name1} />
                                         </div>
                                         <div className="name-chu-hui">
-                                            <p style={{ fontSize: '1.5vh' }} id="name" className="m-2 text-bold">{item.name1}</p>
-                                            <p style={{ fontSize: '1.5vh', paddingLeft: '20px' }} id="role" className="m-2 roles">{item.role1}</p>
+                                            <p style={{ fontSize: '1.5vh', textAlign: 'left' }} id="name" className="m-2 text-bold">{item.name1}</p>
+                                            <p style={{ fontSize: '1.5vh' }} id="role" className="m-2 roles">{item.role1}</p>
                                         </div>
                                     </div>
                                 </div>

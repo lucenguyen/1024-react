@@ -50,7 +50,7 @@ const LibraryComponent = () => {
                                         </div>
                                         <div>
                                             <p className="m-2 text-bold">{item.role}</p>
-                                            <p className=" ml-5">{item.name}</p>
+                                            <p style={{textAlign: 'left'}} className="m-2 ml-5">{item.name}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@ const LibraryComponent = () => {
                                                 </div>
                                                 <div>
                                                     <p className="m-2 text-bold">{item.role}</p>
-                                                    <p className=" ml-5">{item.name}</p>
+                                                    <p style={{textAlign: 'left'}} className="m-2 ml-5">{item.name}</p>
                                                 </div>
                                             </div>
                                         </div>
