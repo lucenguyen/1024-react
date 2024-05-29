@@ -45,7 +45,7 @@ const LibraryComponent = () => {
                                         </iframe>
                                     </div>
                                     <div className="d-flex">
-                                        <div style={{ borderRadius: '25%' }}>
+                                        <div style={{ borderRadius: '25%',paddingTop: '0.7vh' }}>
                                             <img className="m-2" src={item.avatar} alt="Jane Doe" />
                                         </div>
                                         <div>
@@ -94,7 +94,7 @@ const LibraryComponent = () => {
                                                 </iframe>
                                             </div>
                                             <div className="d-flex">
-                                                <div style={{ borderRadius: '25%' }}>
+                                                <div style={{ borderRadius: '25%', paddingTop: '0.7vh' }}>
                                                     <img className="m-2" src={item.avatar} alt="Jane Doe" />
                                                 </div>
                                                 <div>

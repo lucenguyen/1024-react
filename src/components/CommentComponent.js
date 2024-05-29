@@ -51,7 +51,7 @@ const CommentComponent = () => {
                                                 </div>
                                                 <div className="d-flex">
                                                     <div style={{ borderRadius: '25%' }}>
-                                                        <img className="m-2" src={item.img} alt={item.name} />
+                                                        <img style={{paddingTop: '0.8vh'}} className="m-2" src={item.img} alt={item.name} />
                                                     </div>
                                                     <div>
                                                         <p className="m-2 text-bold">{item.name}</p>
@@ -79,7 +79,7 @@ const CommentComponent = () => {
                                         </div>
 
                                         <div className="d-flex">
-                                            <img style={{ width: '48px', height: '48px' }} className="m-2" src={avatar} />
+                                            <img style={{ width: '48px', height: '48px',paddingTop: '0.8vh' }} className="m-2" src={avatar} />
                                             <div>
                                                 <p className="m-2 text-bold">Huỳnh Thất</p>
                                                 <p className="m-2">Chủ hụi</p>
@@ -102,7 +102,7 @@ const CommentComponent = () => {
                                         </div>
 
                                         <div className="d-flex">
-                                            <img style={{ width: '48px', height: '48px' }} className="m-2" src={avatar} />
+                                            <img style={{ width: '48px', height: '48px',paddingTop: '0.8vh' }} className="m-2" src={avatar} />
                                                 <div>
                                                     <p className="m-2 text-bold">Huỳnh Thất</p>
                                                     <p className="m-2">Chủ hụi</p>
@@ -125,7 +125,7 @@ const CommentComponent = () => {
                                         </div>
 
                                         <div className="d-flex">
-                                            <img style={{ width: '48px', height: '48px' }} className="m-2" src={avatar} />
+                                            <img style={{ width: '48px', height: '48px',paddingTop: '0.8vh' }} className="m-2" src={avatar} />
                                             <div>
                                                 <p className="m-2 text-bold">Huỳnh Thất</p>
                                                 <p className="m-2">Chủ hụi</p>

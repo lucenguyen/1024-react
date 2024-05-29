@@ -19,7 +19,7 @@ const OwnerListComponent = () => {
                                 <div className="member-chuhui">
                                     <img className="img-chu-hui" src={item.image1} alt={item.name1} />
                                     <div className="d-flex">
-                                        <div style={{ borderRadius: '25%' }}>
+                                        <div style={{ borderRadius: '25%', paddingTop: '0.5vh'}}>
                                             <img className="m-2" src={item.avatar} alt={item.name1} />
                                         </div>
                                         <div className="name-chu-hui">

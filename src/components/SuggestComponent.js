@@ -48,7 +48,7 @@ const SuggestComponent = () => {
                                                     <p className="mb-3">{item.line4}</p>
                                                 </div>
                                                 <div className="d-flex">
-                                                    <div style={{ borderRadius: '25%' }}>
+                                                    <div style={{ borderRadius: '25%', paddingTop: '0.8vh'}}>
                                                         <img className="m-2" src={item.img} alt={item.name} />
                                                     </div>
                                                     <div>
