@@ -27,7 +27,7 @@ const CommentComponent = () => {
                                 spaceBetween={30}
                                 slidesPerView="3"
                                 loop={true}
-                                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                                autoplay={{ delay: 30000, disableOnInteraction: false }}
                                 breakpoints={{
                                     429: {
                                         slidesPerView: 1,
