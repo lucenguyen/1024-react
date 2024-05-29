@@ -42,10 +42,10 @@ const SuggestComponent = () => {
                                         <div className="member d-flex">
                                             <div className="justify-content-lg-start">
                                                 <div className="m-3">
-                                                    <p>{item.line1}</p>
-                                                    <p>{item.line2}</p>
-                                                    <p>{item.line3}</p>
-                                                    <p className="mb-3">{item.line4}</p>
+                                                    <p>Bắt đầu hoạt động từ: {item.dateTime}</p>
+                                                    <p>Chủ trương hội: {item.slogan}</p>
+                                                    <p>Số lượng thành viên: {item.numberOfMember}</p>
+                                                    <p className="mb-3">Mức độ đánh giá: {item.rating}</p>
                                                 </div>
                                                 <div className="d-flex">
                                                     <div style={{ borderRadius: '25%', paddingTop: '0.8vh'}}>
