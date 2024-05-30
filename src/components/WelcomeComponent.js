@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {LISTJOINMEMBERS} from "../shared/list-member-join";
 import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,26 +7,6 @@ import 'swiper/css/autoplay';
 import {Autoplay, Navigation,Pagination} from "swiper/modules";
 
 const WelcomeComponent = () => {
-    // const {slides, setSlides} = useState(LISTJOINMEMBERS);
-    // useEffect(() => {
-    //     // const swiper = new Swiper('.swiper-container', {
-    //     //     direction: 'vertical',
-    //     //     effect: 'slide',
-    //     //     slidesPerView: 3,
-    //     //     spaceBetween: 0,
-    //     //     loop: true,
-    //     //     autoplay: {
-    //     //         delay: Math.random() * 3*60*1000 + 30000,
-    //     //         reverseDirection: true,
-    //     //         disableOnInteraction: false,
-    //     //     },
-    //     //     breakpoints: {
-    //     //         1024: {
-    //     //             slidesPerView: 3,
-    //     //         },
-    //     //     },
-    //     // });
-    // }, []);
     const slides = LISTJOINMEMBERS;
 
     const imageMoney = require('../assets/images/money.png');

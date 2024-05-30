@@ -1,18 +1,35 @@
-import React from 'react';
+import React, {useEffect, useState}  from 'react';
 import 'swiper/swiper-bundle.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import avatar from '../assets/images/bao-tram-small.png';
 import {ListLibrary} from "../shared/list-library";
+import {Navigation} from "swiper/modules";
 
 
 const LibraryComponent = () => {
+    const [swiperDirection, setSwiperDirection] = useState('horizontal');
+
+    const handleResize = () => {
+        if ( window.innerWidth < 430) {
+            setSwiperDirection('vertical');
+        } else {
+            setSwiperDirection('horizontal');
+        }
+    };
+
+    useEffect(() => {
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     return (
         <section className="suggest">
             <div className="container ">
                 <h2 className="pt-5 text-bold line-chuhui">Thư viện đăng tải</h2>
                 <p className="pb-5">Các tư liệu được thành viên đăng tải trong quá trình hoạt động trong hội</p>
-                <div className="slider-container center-mobile">
+                <div className="slider-container center-mobile hidden-mobie">
                     <div className="swiper-container card-slider">
                         <div className="swiper-wrapper">
                             <Swiper
@@ -66,13 +83,16 @@ const LibraryComponent = () => {
                     <div className="swiper-container card-slider">
                         <div className="swiper-wrapper">
                             <Swiper
+                                modules={[Navigation]}
                                 spaceBetween={20}
                                 slidesPerView="3"
-                                autoplay={{ delay: 3000, disableOnInteraction: false }}
+                                // autoplay={{ delay: 3000, disableOnInteraction: false }}
                                 loop={true}
+                                direction={swiperDirection}
                                 breakpoints={{
                                     429: {
-                                        slidesPerView: 1,
+                                        slidesPerView: 3,
+                                        direction: 'vertical',
                                     },
                                     // For larger screens (tablets and desktops)
                                     1023: {
@@ -83,6 +103,7 @@ const LibraryComponent = () => {
                                     }
                                 }}
                                 navigation={true}
+                                style={{ height: 'auto', maxHeight: 'calc(132vh - 100px)' }}
                             >
                                 {ListLibrary.map((item, index) => (
                                     <SwiperSlide className="swiper-slide d-flex pt-4 m-2" key={index}>
@@ -108,33 +129,6 @@ const LibraryComponent = () => {
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
-                        </div>
-
-                        <div className="swiper-wrapper hidden-tablet">
-
-                            <div className="swiper-video d-flex pt-4 m-2">
-                                <div className="video-library justify-content-lg-start">
-                                    <div className="video text-center m-2">
-                                        <iframe
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                            allowFullScreen className="player"
-                                            frameBorder="0"
-                                            height="225" referrerPolicy="strict-origin-when-cross-origin"
-                                            src="https://www.youtube.com/embed/SlPhMPnQ58k?list=RDSlPhMPnQ58k"
-                                            title="Maroon 5 - Memories (Official Video)" width="380"></iframe>
-                                    </div>
-                                    <div className="d-flex">
-                                        <div style={{ borderRadius: '25%' }}>
-                                            <img className="m-2" src={avatar} alt="Avatar" />
-                                        </div>
-                                        <div>
-                                            <p className="m-2 text-bold">Jane Doe</p>
-                                            <p className="m-2">Senior Designer</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
 
                         <div className="text-center button-dropdown">

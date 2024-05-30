@@ -1058,4 +1058,7 @@ input::placeholder {
   #owners .ownerr:nth-child(n+5) {
     display: none;
   }
+  .hidden-mobie {
+    display: none;
+  }
 }
